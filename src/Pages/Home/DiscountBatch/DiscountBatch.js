@@ -10,7 +10,7 @@ const DiscountBatch = () => {
     }, [])
     return (
         <div>
-            {/* <h1 className='text-center text-info'>Limited Offer On Courses</h1> */}
+            <h1 className='text-center text-info mt-5'>Limited Offer On Courses</h1>
             <div className="container">
                 <div className="row">
                     {
