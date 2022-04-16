@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "PHYSICS",
+        "price": "700tk",
+        "description": "Student have to pay 700 tk per month for physics course.Every Topic will be covered both 1 & 2nd paper",
+        "img": "https://i.ibb.co/M2Sdr6d/physics.jpg"
+    },
+    {
+        "id": 2,
+        "name": "CHEMISTRY",
+        "price": "850tk",
+        "description": "Student have to pay 850 tk per month for chemistry course.We will focus on organic chemistry.",
+        "img": "https://i.ibb.co/bgPQ6x4/chemistry.jpg"
+    },
+    {
+        "id": 3,
+        "name": "HIGHER MATH",
+        "price": "1000tk",
+        "description": "Student have to pay 1000 tk per month for highermath course.We will focus on Calculus part",
+        "img": "https://i.ibb.co/hFdnzJz/highermath.png"
+    }
+]
