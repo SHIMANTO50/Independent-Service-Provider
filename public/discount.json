@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "coursename": "PHYSICS",
+        "discount": "10%",
+        "time": "10days"
+    },
+    {
+        "id": 2,
+        "coursename": "CHEMISTRY",
+        "discount": "12%",
+        "time": "8days"
+    },
+    {
+        "id": 3,
+        "coursename": "HIGHER MATH",
+        "discount": "10%",
+        "time": "7days"
+    }
+]
