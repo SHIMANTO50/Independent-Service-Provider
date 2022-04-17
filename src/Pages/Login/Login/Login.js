@@ -26,6 +26,13 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -61,6 +68,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+
             </Form>
             <p>New to Tutor? <Link to='/register' className='text-primary text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
             <p>Forget Password? <button className='text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
