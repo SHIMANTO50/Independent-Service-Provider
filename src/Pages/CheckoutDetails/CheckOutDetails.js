@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-
-const Service = ({ service }) => {
-    const { name, price, description, img } = service;
+const CheckOutDetails = ({ checkoutInfo }) => {
+    const { name, price, img, description } = checkoutInfo;
     return (
         <div className='gx-5 gy-3 col-sm-12 col-md-6 col-lg-4'>
             <div className="card shadow" style={{ width: "18rem" }}>
@@ -12,11 +10,11 @@ const Service = ({ service }) => {
                     <h5 className="card-title">Subject: {name}</h5>
                     <p>Price:{price}</p>
                     <p className="card-text">Description: {description}</p>
-                    <Link to="/checkout" className="btn btn-primary">CheckOut</Link>
+
                 </div>
             </div>
         </div>
     );
 };
 
-export default Service;
+export default CheckOutDetails;
