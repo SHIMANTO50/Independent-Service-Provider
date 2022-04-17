@@ -1,13 +1,16 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -15,8 +18,11 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+
+
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     const handleSubmit = event => {
         event.preventDefault();
@@ -27,6 +33,11 @@ const Login = () => {
 
     const navigateRegister = () => {
         navigate('/register');
+    }
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
     }
     return (
         <div className='container w-50 mx-auto mb-5'>
@@ -44,14 +55,14 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
-            <p>New to Tutor? <Link to='/register' className='text-danger text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p>New to Tutor? <Link to='/register' className='text-primary text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p>Forget Password? <Link to='/register' className='text-primary text-decoration-none' onClick={resetPassword}>Reset Password</Link> </p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

@@ -10,7 +10,8 @@ import Services from './Pages/Home/Services/Services';
 import NotFound from './Pages/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
-import RequireAuth from './Pages/Login/Login/RequireAuth/RequireAuth';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+
 
 function App() {
   return (
