@@ -7,7 +7,13 @@ const Footer = () => {
     return (
 
         <footer className='mt-3 bg-dark text-white'>
-            <p className='text-center mt-3 tex-white p-5'><small>Copyright &copy; {year}</small></p>
+            <h3 className='text-center mt-3 tex-white pt-5'><small>Copyright &copy; {year}</small></h3>
+            <div>
+                <h5 className='text-center text-white pt-2'>Email: hasan@gmail.com</h5>
+            </div>
+            <div>
+                <h5 className='text-center text-white pt-2 '>Contact No: +880123456789</h5>
+            </div>
         </footer>
     );
 };
